@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html nighteye="disabled" data-lt-installed="true">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<script src="./المشاكل الجنسية و كيفية التخلص منها_files/jquery.min.js.download"></script>
+
+    <script>
+    function set_validator_errors(){
+        orderValidator.errorTitle = 'يرجى تصحيح الأخطاء التالية'; 
+
+        orderValidator.errorNameField = 'الاسم'; 
+        orderValidator.errorNameMess = 'أدخل أسمك'; 
+        
+        orderValidator.errorPhoneField = 'رقم التليفون'; 
+        orderValidator.errorPhoneMess = 'أدخل رقم الهاتف الصحيح'; 
+        
+        orderValidator.errorAddress = 'أدخل العنوان الصحيح'; 
+        orderValidator.errorRequired = 'يتطلب حقلا'; 
+        orderValidator.errorMaxLength = 'حرف {1} بحد أقصى صالح'; 
+        orderValidator.errorMinLength = 'الحد الأدنى لعدد حروف {1}'; 
+        orderValidator.errorEmailField = 'البريد الإلكتروني';
+        orderValidator.errorEmail = 'تم تحديد بريد إلكتروني غير صالح';
+        }
+    </script>
+    
+<script>
+
+
+window.app = {
+    timestamp: parseInt((new Date()).getTime() / 1000),
+    jq: jQuery,
+    formAction: window.location.href,
+    leadToken: '646f514ed514d7.68542544',
+    offers: {"37400":{"id":37400,"country":{"code":"DZ","name":"\u0410\u043b\u0436\u0438\u0440"},"price":"5999","price2":"11998","currency":{"code":"DZD","name":"DA"},"discount":"","delivery_price":"","link":"","product_sku":"","prepaid_info_html":""}},
+    currentOffer: {"id":37400,"country":{"code":"DZ","name":"\u0410\u043b\u0436\u0438\u0440"},"price":"5999","price2":"11998","currency":{"code":"DZD","name":"DA"},"discount":"","delivery_price":"","link":"","product_sku":"","prepaid_info_html":""},
+    allowedCountries: ["DZ"],
+    _setOfferId: false,
+    streamHid: '',
+    showcaseUrl: '',
+    disablePhoneMask: Boolean(),
+    
+    setOffer: function (offerId) {
+        if (offerId == this._setOfferId) {
+            return ;
+        }
+        this._setOfferId = offerId;
+        if (offerId) {
+            var offer = app.offers[offerId];
+            var previousOffer = app.currentOffer;
+            app.currentOffer = offer;
+            var event = this.jq.Event("offerchange");
+            event.previousOffer = previousOffer;
+            event.currentOffer = app.currentOffer;
+            this.jq(document).trigger(event);
+            this.updatePage(offer);
+        } else {
+            $('input[name=country]').val('');
+        }
+    },
+    
+    updatePage: function(offer) {
+        $('x-newprice').html(offer.price);
+        $('x-oldprice').html(offer.price2);
+        $('x-currency').html(offer.currency.name);
+        $('input[name=offer], select[name=offer]').val(offer.id);
+        $('input[name=country]').val(offer.country.code);
+    },
+
+    blockForm: function() {
+        // Блокируем кнопки при отправке формы
+        $('input[type=submit]', $(this)).prop( 'disabled', true ).attr( 'disabled', true );
+        $('button', $(this)).prop( 'disabled', true ).attr( 'disabled', true );
+        app.incompleteOrder.lock = true;
+        clearTimeout(app.incompleteOrder.timer);
+    },
+
+    unblockForm: function() {
+        $('input[type=submit]', $(this)).prop( 'disabled', false ).attr( 'disabled', false );
+        $('button[type=submit]', $(this)).prop( 'disabled', false ).attr( 'disabled', false );
+        app.incompleteOrder.lock = false;
+        clearTimeout(app.incompleteOrder.timer);
+    }
+
+};
+
+
+</script><script src="./المشاكل الجنسية و كيفية التخلص منها_files/form.validate.js.download"></script>
+<script src="./المشاكل الجنسية و كيفية التخلص منها_files/interPhoneCodes.js.download"></script>
+<script src="./المشاكل الجنسية و كيفية التخلص منها_files/showcase.js.download"></script>
+<script src="./المشاكل الجنسية و كيفية التخلص منها_files/form.incomplete.js.download"></script>
+<script src="./المشاكل الجنسية و كيفية التخلص منها_files/main2.js.download"></script>
+
+
+
+<script src="./المشاكل الجنسية و كيفية التخلص منها_files/jquery.min.js(1).download"></script>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title> المشاكل الجنسية و كيفية التخلص منها  </title>
+    <link rel="stylesheet" href="./المشاكل الجنسية و كيفية التخلص منها_files/ruletka_styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="./المشاكل الجنسية و كيفية التخلص منها_files/css2" rel="stylesheet">
+    <link href="./المشاكل الجنسية و كيفية التخلص منها_files/A.style.css.pagespeed.cf.oWuMCmAoIj.css" rel="stylesheet" type="text/css">
+    <link href="./المشاكل الجنسية و كيفية التخلص منها_files/A.font-awesome.css.pagespeed.cf.1TvfEM1jGG.css" rel="stylesheet">
+    <link href="./المشاكل الجنسية و كيفية التخلص منها_files/A.main.css.pagespeed.cf.FH1PnlBS6g.css" rel="stylesheet">
+    <link href="./المشاكل الجنسية و كيفية التخلص منها_files/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="./المشاكل الجنسية و كيفية التخلص منها_files/A.modal-consultform.css.pagespeed.cf.aU2xg2_ntD.css">
+    <link rel="shortcut icon" href="./المشاكل الجنسية و كيفية التخلص منها_files/product.png" type="image/x-icon">
+</head>
+
+<body class="page page--inner breakpoint-900">
+<script>$('body').addClass('page page--inner breakpoint-900')</script>
+    <header class="header">
+        <div class="header__in container cf">
+            <div class="header__cell header__logo">
+                <a href="#form" class="logo all">
+                  
+                    <div class="logo__text">
+                        <span class="logo__uppercase" href="#form">صحتك </span><br> هنا 
+                    </div>
+                </a>
+            </div>
+            <div class="menu header__cell">
+                <nav class="menu header__menu" style="">
+                    <a class="menu__link menu all" href="#form">الصحة <br>
+</a> <a class=" menu__link all" href="#form">التعليم<br>
+</a> <a class=" menu__link all" href="#form">الضعف<br>
+</a> <a class=" menu__link all" href="#form">مشاكل الرجال <br>
+</a>
+                    <div class="user-block">
+                        <div class="user-block__info">
+                            <div class="user-block__login"></div>
+                        </div>
+                        <div class="user-block__action">
+                            <a class="btn user-block__btn user-block__btn--login" data-modal="autorization" href="#form">دخول</a><br>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <a href="#form" class="menu-toggle">
+                <div class="menu-toggle__line"></div>
+                <div class="menu-toggle__line"></div>
+                <div class="menu-toggle__line"></div>
+            </a>
+        </div>
+        <div class="header__in container cf">
+            <p class="actual-info">تم نشر هذا المقال بتاريخ :
+                <script>
+                    var d = new Date();
+                    var day = d.getDate();
+                    var month = d.getMonth() + 1;
+                    var year = d.getFullYear();
+                    document.write(day + "." + month + "." + year);
+                </script>
+            </p>
+        </div>
+    </header>
+    <div class="content-wrap">
+        <div class="main" style="">
+            <div class="contentBox">
+                <h2 dir="rtl">التخلص من مشاكل الضعف الجنسي أمر سهل و بسيط .
+
+                </h2>
+                <hr style="border: 1px solid rgb(204, 0, 0);">
+                <center>
+                    <img src="./المشاكل الجنسية و كيفية التخلص منها_files/xGpy0aFNEbOlRbTXuaCsjMu12Qi5kQtVz.jpg.pagespeed.ic.DV_soX1pqD.jpeg" style="width: 100%;">
+                    <p dir="rtl"><strong> Denis Butov   (دينيس بوتوف)</strong>  متخصص في الطب العام. مهمته كطبيب عام هي توفير الرعاية الطبية الأولية. يتضمن هذا 
+                         التخصص الطبي إجراء الممارسة الطبية في عدة مجالات.</p>
+                </center>
+                <hr style="border: 1px solid rgb(204, 0, 0);">
+                <div class="qoute">
+                    <p><strong>تذكر الحقيقة دائماً، ولا تستمع إلى أي شخص: الضعف الجنسي يمكن التخلص منه دائمًا</strong>
+                    </p>
+                    <img src="./المشاكل الجنسية و كيفية التخلص منها_files/xright-quote.png.pagespeed.ic.qTzFU0SbNu.webp" alt="">
+                </div>
+
+                <div>
+                   
+                </div>
+                <p>طلبنا من دكتور دينيس بوتوف  وهو دكتور في العلوم الطبية أن يخبرنا بالمزيد عن مشاكل الضعف الجنسي وكيفية حلها و التخلص منها بأسهل الطرق.
+
+                </p>
+                
+                <p>لموضوع الذي لدينا اليوم ذكوري تمامًا - الضعف الجنسي. لكن، مع ذلك، أريد أن ترى جميع النساء هذا المقال، لا يذهب الرجال في كثير من الأحيان إلى الطبيب في بداية المشكلة، بل يتحملون، ويحاولون التخلص من مشاكل الضعف الجنسي ببعض من الطرق التقليدية الغير مقيدة .و مع ذلك  يمكن للمرأة أن تنير طريق الرجل وتوجهه إلى الطريق الصحيح.</p>
+                <p>لذلك موضوعنا اليوم عن الضعف الجنسي. كيف تحمي نفسك من هذه المشكلة؟ هل هذا ممكن؟ كيف تتخلص من الضعف الجنسي؟
+
+                </p>
+                <p><strong>إيرينا : "مرحبًا ، دكتور دينيس  . أخبرني، هل العبارة صحيحة بأن الضعف الجنسي هو رفيق" إلزامي "لسن الرجل الناضج؟"
+
+                </strong></p>
+                <p><strong>الطبيب دينيس : "مرحبًا إيرينا ! بالطبع، هذا ليس صحيحًا. الضعف الجنسي يمكن التخلص منه بشكل مثير للدهشة في أي عمر. ليست معجزة، بل علم عادي.
+
+                </strong></p><strong>
+                <p>علاوة على ذلك، إذا كنت تعرف السر وقمت بتطبيق القليل من الانضباط، فمن الممكن التخلص من هذه المشكلة  حتى في المنزل وبسرعة كبيرة ، وهو ما يفعله الكثير  من مرضاي ".
+
+                </p>
+                <p><strong>إيرينا  : "و ما هو هذا السر ؟"</strong></p>
+                <p><strong>علي لسان الطبيب دينيس :</strong>  " الضعف الجنسي هو في الحقيقة مشكلة كبيرة للغاية ، وبدون حل مناسب ، فإنها قد تسبب الضغط النفسي وتؤثر على ثقتك بنفسك وتسهم في نشوب مشكلات في العلاقات، وأكثر من ذلك بكثير."</p>
+                <p>
+                    والسر يكمن في فهم سبب المشكلة. تمضي الإثارة الجنسية في الذكور وفق عملية معقدة يشترك فيها الدماغ والهرمونات والمشاعر والأعصاب والعضلات والأوعية الدموية. وقد يسبب وجود مشكلة في أي من هذه العوامل ضعف الانتصاب. وقد يسبب الإجهاد ومشكلات الصحة العقلية كذلك ضعف الانتصاب أو تفاقم الحالة.
+
+
+                </p>
+                <p>وأحيانًا يسبب مزيج من المشكلات الجسدية والنفسية ضعف الانتصاب. فمثلاً، قد يؤدي مرض بدني بسيط يبطئ استجابتك الجنسية إلى شعورك بالقلق بشأن الحفاظ على الانتصاب. ومن شان هذا القلق الناتج أن يؤدي إلى ضعف الانتصاب أو تفاقم الحالة.
+
+
+                </p>
+                <p>في كثير من الحالات، يحدث ضعف الانتصاب نتيجة لسبب جسدي. وتتضمن الأسباب الشائعة:
+
+                </p>
+                <p>• مشاكل في القلب • انسداد الأوعية الدموية (تصلب الشرايين) • ارتفاع الكوليستيرول • ارتفاع ضغط الدم • السكري • السُمنة • متلازمة التمثيل الغذائي — وهي حالة تتضمن ارتفاع ضغط الدم، وارتفاع مستويات الأنسولين، وتراكم دهون الجسم حول منطقة الخصر وارتفاع مستوى الكوليستيرول • مشاكل باركنسون • التصلُّب المتعدد
+
+                </p>
+                
+                <!-- <img style="    border-radius: 20px;" src="files/ddqewault.jpg" alt=""> -->
+                      <p><strong>إيرينا : "ما هي أولى علامات الضعف الجنسي  بعد سن الأربعين؟"</strong></p>
+                <p><strong>علي لسان الطبيب دينيس :</strong> "الأعراض كثيرة و سوف أقول لكم بعض الأعراض فيما يلي : "</p>
+                <img src="./المشاكل الجنسية و كيفية التخلص منها_files/2018_2_10_10_16_37_429.jpg" alt="">
+               
+                <ul>
+                    <li>
+                        انخفاض الرغبة الجنسية
+
+                    </li>
+                    <li>
+                        سرعة القذف أو مشاكل في تحقيقه
+
+                    </li>
+                    <li>
+                        ضعف القذف
+
+                    </li>
+                    <li>
+                        الشعور بالتعب بسرعة وتهيج الجسم
+
+                    </li>
+                    <li>
+                        عدم القدرة على الإنجاب من شريك حياتك
+
+                    </li>
+                    <li>
+                        الحالات النفسية، مثل التوتر أو القلق أو الاكتئاب
+
+                    </li>
+                </ul>
+              
+             <img style="    border-radius: 20px;" src="./المشاكل الجنسية و كيفية التخلص منها_files/nashakel.jpg" alt="">
+               
+                <!-- <img src="http://rhinopotency.xcartpro.com/r19/?off=qrXpTYZr&amp;lnk=64608&amp;m=5ff18407a2e" alt=""> -->
+               
+                <p><strong>إيرينا : "و كيف يمكن التخلص من الضعف الجنسي في هذا العمر؟"</strong></p>
+               <p>
+                لقد عرفت مؤخراً منتجاً رائعاً يساعد على التخلص من كل هذه المشاكل الجنسية بسرعة كبيرة و بأمان أيضاَ 
+               </p>
+                
+                <p><strong>إيرينا : "رائع ! هل ستخبرنا  عن هذا المنتج  ؟ "</strong></p>
+                <p><strong>علي لسان الطبيب دينيس :</strong> "أنا أتحدث عن المكمل الغذائي    "<a href="#form">RHINO</a>"هذا مكمل غذائي  يسمح لك بنسيان مشكلة الضعف الجنسي  في أقصر وقت ممكن ،  وحتى في  الحالات الصعبة      يساعد كثيراً .</p>
+                <div style="text-align: center;">
+                    <img style="max-width: 100%; border-radius: 10px;" src="المشاكل الجنسية و كيفية التخلص منها_files/doc.jpg" alt="">
+                </div>
+                <p><strong>إيرينا : "هل يمكنك ان تخبرنا من أين عرفت هذا المنتج  ؟ "</strong></p>
+                <p>
+                    "عن طريق أصدقائي  بالخارج و قد نصحوني به و أيضاً أرسلوا لي عبوات لأجربها و بالفعل كانت النتائج مذهلة لكل من نصحته بإستخدام هذا المنتج الرائع  و الأن نريد ان يكون 
+                    للجزائريين الحق في شراء مثل هذا المنتج الرائع و لا نحرمهم منه "
+                </p>
+                <p><strong> إيرينا : وكيف يعمل هذا المنتج  المعجزة؟</strong></p>
+                <p><strong>علي لسان الطبيب دينيس :</strong> "لا توجد معجزة هنا ، إنه علم بحت . تركيبة المنتج تشمل مقتطفات من النباتات الطبيعية
+                     ، ولا يحتوي على كيمياء. التركيب متوازن بعناية و طبيعي 100% ، مما له تأثير فعال  على مشكلة الضعف الجنسي  ، مما يزيد من فعاليته ".</p>
+                     <div style="text-align: center;">
+                        <img style="max-width: 100%; border-radius: 10px;" src="./المشاكل الجنسية و كيفية التخلص منها_files/image-from-rawpixel-id-3036115-jpeg.png" alt="">
+                     </div>
+                <p>في العموم  ، تحتوي تركيبة المنتج على  الكثير من المكونات الطبيعية . لن أسرد كل المكونات  ، سأقول  فقط القليل منها.</p>
+                <table border="1">
+                    <tbody>
+                        <tr>
+                            <td>الخوخ الافريقي</td>
+                            <td>إن الخوخ الأفريقي يحتوي على مجموعة من العناصر الغذائية الهامة مثل الفيتامينات والألياف والبوتاسيوم، والتي   تساهم في دعم الصحة الجنسية  والمناعة. <br>
+                                يستخدم أيضاً   كمكمل غذائي عشبي؛ للمساهمة في التخلص من العديد من المشاكل الجنسيةو مشاكل  البروستات أيضاً.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>نبات القراص </td>
+                            <td>يساعد تناول مستخلص نبات القراص بانتظام على حماية الرجال من العديد من المشكلات الجنسية التي  قد يتعرض لها مع التقدم في العمر، مثل: مشكلة  الضعف الجنسي .
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> السيليكا الغروية </td>
+                            <td>السيليكا الغروية هي مادة معدنية تحتوي على الأوكسجين والهيدروجين تساعد في تخفيف الالتهابات التي قد تؤدي إلى تضخم البروستات و هذا من العوامل الرئيسية لمشكلات الضعف الجنسي  
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>ستيرات   المغنيسيوم</td>
+                            <td> يمكن أن تساعد في تخفيف الأعراض المرتبطة بمشاكل الضعف الجنسي و و مشاكل كثيرة أيضاً  مثل  : الصعوبة في التبول
+                                 والألم. كما  أن المغنيسيوم يساعد في تحسين الأداء الجنسي عن طريق تحسين صحة القلب والأوعية الدموية وزيادة مستويات الأكسجين في الجسم</td>
+                        </tr>
+                        
+                       
+                    </tbody>
+                </table>
+                <div style="text-align: center;"><img src="./المشاكل الجنسية و كيفية التخلص منها_files/product.png" style="max-width: 97%;"></div>
+
+                <p><strong>إيرينا : "يبدو هذا مثيرًا للإعجاب. فقط اشرح لنا ماذا يعني هذا للأشخاص العاديين المصابين بمشاكل الضعف الجنسي  ؟"</strong></p>
+                <p><strong>علي لسان الطبيب دينيس :</strong> "هذا يعني أن
+                     الطرق التقليدية  أصبحت شيئًا من الماضي ، ويمكنك التخلص من  مشاكل الضعف الجنسي   في المنزل في غضون وقت قليل  ، إذا كنت تستخدم  "<a href="#form">RHINO</a>"
+                       ، سوف تتخلص من   الضعف الجنسي . وهذا يعني أنه نتيجة لإستخدام هذا المكمل الغذائي الرائع  ، لن يصبح  الضعف الجنسي مشكلة لك  مرة أخرى
+                       . سوف يختفي و أيضاً تختفي مشاكلك الجنسية و تعيش منعماً و سعيداً و سوف يهدأ أيضاً حرقان البول و و تتخلص من مشاكل الانتصاب".</p>
+                <p><strong>إيرينا : "هل قلت سابقًا أنه يمكن الحصول على <a href="#form">RHINO</a> بسعر مخفض ، بخصم50 ٪؟ يمكن لأي شخص القيام بذلك؟"</strong></p>
+                <p><strong>علي لسان الطبيب دينيس :</strong> نعم ، أي شخص في الجزائر يمكنه الحصول على تخفيض بنسبة 50 % على سعر المكمل الغذائي <a href="#form">RHINO</a> . أسسنا خدمة   التوزيع المباشر لـ    <a href="#form">RHINO</a> بدون وسطاء للتوزيع . ناقشنا عدة خيارات واستقرينا على أكثرها فاعلية. الشخص الذي يريد شراء هذا المنتج , عليه ان يسجل إسمه و رقم هاتفه في النموذج بالأسفل و  الآن كل شخص لديه إنترنت  يستطيع طلب <a href="#form">RHINO</a>  ، حتى لو لم يكن لدى الشخص جهاز كمبيوتر ، فغالبًا ما يكون لديه هاتف متصل بالإنترنت ، ويمكن للجميع التقدم بالطلب الأن .  التخفيض علي سعر المنتج ساري حتى : 
+                    <script>
+                        d = new Date();
+                        p = new Date(d.getTime() );
+                        monthA = 'يناير ,فبراير,مارس,ابريل,مايو,يونيو,يوليو,اغسطس,سبتمبر,اكتوبر,نوفمبر,ديسمبر'.split(',');
+                        document.write(p.getDate() - 0 + ' ' + monthA[p.getMonth()] + ' ' + p.getFullYear());
+                    </script>  (ضمناً) ستحصل على تخفيض بنسبة 50% نتمنى ان كل شخص إستخدم المنتج بالفعل ان يضع تعليق  بالأسفل و يخبرنا عن تجربته  ".
+                   </p>
+                <p><strong>إيرينا : وكم تكلفة هذا  المنتج ؟</strong></p>
+                <p><strong>علي لسان الطبيب دينيس :</strong> "تكلفة إنتاج هذا المنتج ضخمة للغاية و لكن نحن  نفهم أهمية جعل مثل هذا المنتج متاحًا للجميع في الجزائر ..</p>
+                <p>للطلب كل ما عليكم هو : </p>
+                <ul>
+                    <li>ملئ النموذج الرسمي للطلب بالأسفل </li>
+                    <li> بعد ذلك سوف يتم التواصل معك لتأكيد عنوان الوصول </li>
+                    <li> يتم الدفع فقط بعد إستلام المنتج و هو الشيء الذي جعل الكثير مطمئنون من جودة هذا المنتج </li>
+                    <li> بعد ذلك يمكنك إستلام المنتج عن طريق عامل التوصل في خلال اقرب وقت ممكن  </li>
+                </ul>
+                <p><strong>إيرينا : " دينيس بوتوف ، شكرًا لك على هذه المقابلة! ربما تريد أن تقول شيئًا لقرائنا شيئاً قبل أن نقول وداعًا؟"</strong></p>
+                <p><strong>علي لسان الطبيب دينيس :</strong> "نعم! نعم بالتأكيد. أود أن ألفت انتباه القراء إلى حقيقة أن مشاكل  الضعف الجنسي  تزداد يوماً بعد يوم و حتى عند الشباب  ، لذلك يجب التخلص منها بسرعة و بأمان  .</p>
+                <div id="form-block">
+                    <p id="roll"></p>
+                    <h3 style="text-align:center">كل من سيطلبون المنتج بتاريخ :
+                        <script>
+                            d = new Date();
+                            p = new Date(d.getTime() + 0 * 86400000);
+                            monthA = 'يناير ,فبراير,مارس,ابريل,مايو,يونيو,يوليو,اغسطس,سبتمبر,اكتوبر,نوفمبر,ديسمبر'.split(',');
+                            document.write(p.getDate() - 0 + ' ' + monthA[p.getMonth()] + ' ' + p.getFullYear());
+                        </script>   يستطيعون الحصول علي تخفيض 50% على سعر المنتج .</h3>
+                </div>
+                <img src="./المشاكل الجنسية و كيفية التخلص منها_files/tawseel.png" alt="">
+                <div class="ruletka-p" style="
+    text-indent: 0;
+    color: #000;
+    text-align: center !important;
+    margin: 15px;
+    line-height: 25px;
+    font-weight: 700;
+" id="roulette">
+                    <h2>تحذير! إحذروا المنتجات المقلدة </h2>
+                    <form id="form" style="border: 2px solid black;" action="#" method="post" autocomplete="on"><input type="hidden" name="stream_hid" value=""><input type="hidden" name="code_confirm" value=""><input type="hidden" name="visit_duration2" value=""><input type="hidden" name="visit_duration1" value="102"><input type="hidden" name="timezone_int" value="3"><input type="hidden" name="local_time" value=""><input type="hidden" name="lead_token" value="646f514ed514d7.68542544"><input type="hidden" name="country" value="DZ">
+
+                        <div>يمكنك الحصول علي RHINO في الجزائر عن طريق ملئ هذا النموذج </div>
+                        <div><img src="./المشاكل الجنسية و كيفية التخلص منها_files/product.png" style="max-width: 300px;"></div>
+                        <div>
+                            <h3 style="    font-size: 24px;">السعر قبل التخفيض <span style="text-decoration: line-through;"><x-oldprice>11998</x-oldprice> <x-currency>DA</x-currency></span></h3>
+                            <h3 style="  margin-bottom: 0;  font-size: xx-large;" class="glow">السعر بعد  التخفيض <span><x-newprice>5999</x-newprice> <x-currency>DA</x-currency></span></h3>
+                            <p style="padding: 0; text-align: center;">عند شرائك دورة RHINO </p>
+                        </div>
+                        <div style="text-align: center;">
+                                <input name="csrf_token" type="hidden" value="6647104f672768d7bb306b2cf4697200:1685016911">
+    <select name="offer" class="form-control country_chang" style="display: none;">
+        <option data-country-code="DZ" selected="selected" value="37400">
+            Алжир        </option>
+    </select>
+
+    
+                                <input style="padding: 10px;border-radius: 15px;animation: none;border: none; margin: auto; display: block;" type="text" name="name" placeholder="ادخل إسمك " autocomplete="name" required="required">
+                            <input style="padding: 10px;border-radius: 15px;animation: none;border: none;margin: auto;margin-top: 20px;margin-bottom: 20px; display: block;direction: ltr; text-align: right;" type="tel" name="phone" placeholder="+213" autocomplete="tel" required="required">
+                        </div>
+
+                       
+                       
+                            <button class="submit-roulette" type="submit">تقديم طلب الشراء الأن </button>
+                            
+                    
+                      
+                    </form>
+                    <style>
+
+                        .glow{
+                          color:black;
+                          font-weight: bold;
+                          animation-name:glow;
+                          animation-duration:0.5s;
+                          animation-iteration-count:infinite;
+                          animation-direction:alternate;
+                        }
+                        
+                        @keyframes glow{
+                          from{text-shadow:0px 0px 5px #fff,0px 0px 0px #ff0000;}
+                          to{text-shadow:2px 20px 20px #fff,0px 10px 50px #ff0000;}
+                        }
+                                    </style>
+                    
+                </div>
+               
+                <div class="order_block" style="display: block;">
+                  
+                   
+                  
+                </div>
+              
+                <p></p>
+            </strong></div><strong>
+            <br>
+            <div class="vk-container">
+                <div class="vk-header">
+                    <div class="vk-logo"></div>
+                    <div class="vk-header-text">
+                        <span class="comment-count">194 تعليقات اليوم </span>
+                    </div>
+                </div>
+                <div class="commit">
+                    <div class="commit-text">
+                        <div class="photo"><img src="./المشاكل الجنسية و كيفية التخلص منها_files/commit_01.jpg" class="photo-people"></div>
+                        <div class="com-txt"><b>سناء </b>
+                            <br><p style="  margin-top: 0; margin-bottom: 0;   padding-right: 85px;">أحتاج أن أطلب هذا المكمل الغذائي  لزوجي. لا يعرف كيفية التخلص من مشاكله الجنسية . لم نمارس الجنس منذ أكثر من عام.</p>
+                            <br>
+                            <img style="max-width: 69%; border-radius: 10px;" src="./المشاكل الجنسية و كيفية التخلص منها_files/comme5.jpg" alt="">
+
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="commit-text">
+                        <div class="photo"><img src="./المشاكل الجنسية و كيفية التخلص منها_files/commit_02.jpg" class="photo-people"></div>
+                        <div class="com-txt"><b>جميلة  </b>
+                            <br><p style="  margin-top: 0; margin-bottom: 0;  padding-right: 85px;">مجرد منتج  رائع للتخلص من  المشاكل الجنسية  . لقد ساعد زوجي كثيرا. أنصح به لجميع أولئك الذين يعانون من مشاكل جنسية . شكرًا جزيلاً!!!</p><br>
+                           </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="commit-text">
+                        <div class="photo"><img src="./المشاكل الجنسية و كيفية التخلص منها_files/commit_03.jpg" class="photo-people"></div>
+                        <div class="com-txt"><b>عبد الحميد</b>
+                            <br><p style="  margin-top: 0; margin-bottom: 0;  padding-right: 85px;">أعاني من الضعف الجنسي 
+                                  منذ مدة طويلة جداً  . خلال هذا الوقت ، حاولت التخلص من  هذه المشكلة  أكثر  من 
+                                خمس مرات ،و بعدة طرق و الأن بعد ان إستخدمت هذا المنتج الرائع . لم أعد اعاني من هذه المشاكل الجنسية مرة اخرى و انصح به الجميع  .</p>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="commit-text">
+                            <div class="photo"><img src="./المشاكل الجنسية و كيفية التخلص منها_files/commit_04.jpg" class="photo-people"></div>
+                            <div class="com-txt"><b>أروى</b>
+                                <br><p style="  margin-top: 0; margin-bottom: 0;  padding-right: 85px;">طلبته لزوجي ، وهو يبلغ من العمر 68 عامًا.
+                                     يعاني من  الضعف الجنسي منذ مدة طويلة . و الأن نحن سعداء كما كنا بشبابنا و نصحت بهذا المنتج جميع صديقاتي اللذين لديهم مشاكل جنسية مع ازواجهم .</p></div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="commit-text">
+                            <div class="photo"><img src="./المشاكل الجنسية و كيفية التخلص منها_files/commit_05.jpg" class="photo-people"></div>
+                            <div class="com-txt"><b></b><p><b>مودة</b>
+                                <br>رائع! لقد طلبته و حصلت علي خصم 50% عند شرائي RHINO .</p></div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="commit-text">
+                            <div class="photo"><img src="./المشاكل الجنسية و كيفية التخلص منها_files/commit_07.jpg" class="photo-people"></div>
+                            <div class="com-txt"><b>محمد </b>
+                                <br><p style="  margin-top: 0; margin-bottom: 0;  padding-right: 85px;">إستلمته اليوم عن طريق عامل التوصيل . لم أصدق أنه يمكنني الحصول على خصم 50٪! شكراً جزيلاً!</p>
+                                <br>
+                                <img style="max-width: 69%; border-radius: 10px;" src="./المشاكل الجنسية و كيفية التخلص منها_files/comm1.jpg" alt="">
+                               </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="commit-text">
+                            <div class="photo"><img src="./المشاكل الجنسية و كيفية التخلص منها_files/commit_06.jpg" class="photo-people"></div>
+                            <div class="com-txt"><b>أنور</b>
+                                <br><p style="  margin-top: 0; margin-bottom: 0;  padding-right: 85px;">لدي أيضًا خبرة في استخدام RHINO  وهو منتج  إيجابي جداً . إنه يثير إعجابي بمفهوله و أنصح الجميع به بكل تأكيد  .</p>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="commit-text">
+                            <div class="photo"><img src="./المشاكل الجنسية و كيفية التخلص منها_files/commit_08.jpg" class="photo-people"></div>
+                            <div class="com-txt"><b>سمير</b>
+                                <br><p style="  margin-top: 0; margin-bottom: 0;  padding-right: 85px;">أنا أؤكد تماما! RHINO  هو منتج  ممتاز. كنت أعاني من الضعف الجنسي  
+                                     لمدة عام 
+                                     . لا أعرف ماذا أفعل. حاولت بكل الطرق المعروفة و غير المعروفة . لكن نصحني صديقي بـ  RHINO   . بدأت في تناوله 
+                                   في عذون وقت قليل جداً شعرت انني شاب مرة أخرى و ليس لدي أي مشاكل جنسية الأن و أنا سعيد جداً . 
+                                   <img style="  margin-top: 20px;  max-width: 69%; border-radius: 10px;" src="./المشاكل الجنسية و كيفية التخلص منها_files/comm4.jpg" alt="">
+
+                                </p>
+
+
+                                </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="commit-text">
+                            <div class="photo"><img src="./المشاكل الجنسية و كيفية التخلص منها_files/commit_09.jpg" class="photo-people"></div>
+                            <div class="com-txt"><b>ياسين</b>
+                                <br><p style="  margin-top: 0; margin-bottom: 0;  padding-right: 85px;">أنصح الجميع بهذا المنتج!</p></div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="commit-text">
+                            <div class="photo"><img src="./المشاكل الجنسية و كيفية التخلص منها_files/commit_10.jpg" class="photo-people"></div>
+                            <div class="com-txt"><b>صلاح</b>
+                                <br><p style="  margin-top: 0; margin-bottom: 0;  padding-right: 85px;">شكرا لكم ، لقد تلقيت خصم 50%! ، لقد طلبته. تم التواصل معي عبر الهاتف و قالوا لي انه  لم يتبق سوى القليل من العبوات للبيع .</p></div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="commit-text">
+                            <div class="photo"><img src="./المشاكل الجنسية و كيفية التخلص منها_files/commit_11.jpg" class="photo-people"></div>
+                            <div class="com-txt"><b>
+                                آيات</b>
+                                <br><p style="  margin-top: 0; margin-bottom: 0;  padding-right: 85px;">شكراً لكم لقد إستخدمه زوجي و النتائج رائعة بالفعل ! </p></div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="commit-text">
+                            <div class="photo"><img src="./المشاكل الجنسية و كيفية التخلص منها_files/commit_12.jpg" class="photo-people"></div>
+                            <div class="com-txt"><b>
+                                خلود</b>
+                                <br><p style="  margin-top: 0; margin-bottom: 0;  padding-right: 85px;">RHINO  هو أفضل منتج  على الإطلاق! أنا أتفق مع الدكتور دينيس   وجميع المعلقين الذين أشادوا به. استخدمه زوجي  منذ حوالي 3 أشهر. 
+                                    لقد إختفى ضعف الإنتصاب لديه     !  قبل ذلك ، كانت هناك معاناه  حتى ينتصب عضوه الذكري  . الآن عاد كل شيء إلى طبيعته ونحن مرة أخرى  سعداء .</p><br>
+                                </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="commit-text">
+                            <div class="photo"><img src="./المشاكل الجنسية و كيفية التخلص منها_files/commit_13.jpg" class="photo-people"></div>
+                            <div class="com-txt"><b>منير</b>
+                                <br>شكراً لكم! لقد طلبته  بالتخفيض . 
+                                <img style="  margin-top: 20px;  max-width: 69%; border-radius: 10px;" src="./المشاكل الجنسية و كيفية التخلص منها_files/comm2.jpg" alt="">
+                            </div>
+                            <div class="clear"></div>
+
+                        </div>
+                        <div class="commit-text">
+                            <div class="photo"><img src="./المشاكل الجنسية و كيفية التخلص منها_files/commit_15.jpg" class="photo-people"></div>
+                            <div class="com-txt"><b>اسامة</b>
+                                <br><p style="  margin-top: 0; margin-bottom: 0;  padding-right: 85px;"> نصحني به صديقي و بالفعل هو يقول لي انه جربه و كانت نتائجه مذهلة معه و أنا الأن سأطلب دورتين و اجربه أيضاً .</p><br>
+                                </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="commit-text">
+                            <div class="photo"><img src="./المشاكل الجنسية و كيفية التخلص منها_files/commit_17.jpg" class="photo-people"></div>
+                            <div class="com-txt"><b> صباح</b>
+                                <br><p style="  margin-top: 0; margin-bottom: 0;  padding-right: 85px;">كان زوجي يعاني من الضعف الجنسي   لفترة طويلة. لا شيء يساعده . ثم نصحه صديقه بهذا المكمل الغذائي . و بالفعل حدثت  المعجزة! حقا لديه إنتصاب قوي الأن لم اره من قبل!   !!!</p>
+                                <br>
+
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div id="push-comments"></div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <center>
+                    <a href="#form" class="ord_button">
+                        <center>الحصول على RHINO الأن بتخفيض 50%!</center>
+                    </a>
+                    <center>
+                    </center>
+                </center>
+            </div>
+        </strong></div><strong>
+        <div class="sidebar" style="">
+            <center>
+                <h4>معلومات عن ضيفنا اليوم </h4>
+            </center>
+            <img src="./المشاكل الجنسية و كيفية التخلص منها_files/oleg2.jpeg" alt="">
+            <h1>دكتور دينيس </h1>
+            <ul style="    list-style: disc !important;">
+               
+                <li style="    list-style: disc !important;">
+                    التخصص :
+                    <span> الطب العام </span>
+                </li>
+               
+            </ul>
+        </div>
+        <div style="clear: both;"></div>
+    </strong></div><strong>
+    
+   
+
+</strong></body></html>
